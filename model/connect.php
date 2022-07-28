@@ -4,9 +4,9 @@ class connect
 	var $db=null;
 	public function __construct() 
 	{
-		$dsn='mysql:host=localhost;dbname=quanlysinhvien';
-		$user='root';
-		$pass='';
+		$dsn='mysql:host=b9wlmftkdhskventr8m2-mysql.services.clever-cloud.com;dbname=b9wlmftkdhskventr8m2';
+		$user='unuutlb6spzxgtas';
+		$pass='ASBdUBiH4rq4oT1L0329';
 		$this->db=new PDO($dsn,$user,$pass,array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET NAMES utf8"));
 	}
 	//	lấy đúng 1 ID nên lấy fetch vô luôn
