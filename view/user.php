@@ -6,7 +6,7 @@
                 <h1>Đánh Giá Điểm Rèn Luyện
             
                 <?php
-                if(!isset($_GET['mssv'])):
+                if(!isset($_GET['mssv'])){
                 $db1 =new user();
                 $rel2=$db1->selectNam($_SESSION['mssv']);
                 ?>
@@ -28,7 +28,7 @@
                 </h1>
                 
                 <?php
-                else:
+                }else{
                     $db3 = new user();
                     $rel3=$db3->selctKq($_GET['mssv']);
                     $md=$rel3['md'];
@@ -39,7 +39,7 @@
                     <a href="index.php?action=home&act=thongtin1&tt=tt" >Quay lại</a>
 
                     <?php
-                endif;
+                    }
                 ?>
                 <h5>
                 <table class="tableuser">
@@ -68,20 +68,19 @@
                  while($set1=$rel->fetch()):
                 ?>
                         
-
                         <tr>
                             <td><?php echo $set1[1];?></td>
                             <td><?php echo $set1[2];?></td>
                             <input type="hidden" name="idtc<?php echo $i?>" value="<?php echo $set1[0];?>">
                             <input type="hidden" name="thd<?php echo $i ?>" value="<?php echo $set1[2];?>">
                             <?php                           
-                            if(!isset($_GET['mssv'])):
+                            if(!isset($_GET['mssv'])){
                             ?>
                             <td><input type="number"  id="diem<?php echo $i;?>" name="diem<?php echo $i;?>" min=0 max=<?php echo $set1[2];?> value="0" onclick="ttien()"id=""></td>
                             <td><input type="number" min=0 disabled  value=0></td>
                             <?php
-                            else:
-                                ?>
+                            }else{
+                            ?>
                                 <td><input type="number"  disabled  value=<?php
                                 $dnd=$db3->selectnd($mnd,$set1[0],$_GET['hk']);
                                 echo $dnd[3];
@@ -91,7 +90,7 @@
                                 <input type="hidden" name="md" value="<?php echo $md?>">
                                 <td><input type="number"  id="diem<?php echo $i;?>" name="diem<?php echo $i;?>" min=0 max=<?php echo $set1[2];?> value="0" onclick="ttien()"id=""></td>
                                 <?php
-                            endif;
+                            }
                             ?>
                         </tr>
 
