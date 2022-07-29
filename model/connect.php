@@ -4,10 +4,17 @@ class connect
 	var $db=null;
 	public function __construct() 
 	{
-		$dsn='mysql:host=b9wlmftkdhskventr8m2-mysql.services.clever-cloud.com;dbname=b9wlmftkdhskventr8m2';
-		$user='unuutlb6spzxgtas';
-		$pass='ASBdUBiH4rq4oT1L0329';
-		$this->db=new PDO($dsn,$user,$pass,array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET NAMES utf8"));
+		$servername='sql6.freemysqlhosting.net';
+		$data='sql6509574';
+		$user='sql6509574';
+		$pass='UPdgVNil8d';
+		// $servername='localhost';
+		// $data='quanly';
+		// $user='root';
+		// $pass='';
+		$this->db = new PDO("mysql:host=$servername;dbname=$data", $user, $pass);
+		$this->db->exec("set names utf8mb4");
+
 	}
 	//	lấy đúng 1 ID nên lấy fetch vô luôn
 	public function getInstance($select)
